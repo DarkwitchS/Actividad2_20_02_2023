@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Starbucks Landing Page Website Design using Html CSS & Javascript</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" async></script>
 </head>
 <body>
     <section>
         <div class="circle"></div>
         <header>
             <a href="#"><img src="img/logo.png" class="logo"></a>
-            <div class="toggle" onclick="toggleMenu();"></div>
+            <div class="toggle"></div>
             <ul class="navigation">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Menu</a></li>
@@ -35,9 +36,9 @@
             </div>
         </div>
         <ul class="thumb">
-            <li><img src="img/thumb1.png" onclick="imgSlider('img/img1.png'); changeCircleColor('#017143')"></li>
-            <li><img src="img/thumb2.png" onclick="imgSlider('img/img2.png'); changeCircleColor('#eb7495')"></li>
-            <li><img src="img/thumb3.png" onclick="imgSlider('img/img3.png'); changeCircleColor('#d752b1')"></li>
+            <li><img src="img/thumb1.png" data-toggle='{"img": "img/img1.png", "color": "#017143"}'></li>
+            <li><img src="img/thumb2.png" data-toggle='{"img": "img/img2.png", "color": "#eb7495"}'></li>
+            <li><img src="img/thumb3.png" data-toggle='{"img": "img/img3.png", "color": "#d752b1"}'></li>
         </ul>
         <ul class="sci">
             <li><a href="#"><img src="img/facebook.png"></a></li>
@@ -45,20 +46,5 @@
             <li><a href="#"><img src="img/instagram.png"></a></li>
         </ul>
     </section>
-    <script type="text/javascript">
-        function imgSlider(anything){
-            document.querySelector('.starbucks').src = anything;
-        }
-        function changeCircleColor(color) {
-            const circle = document.querySelector('.circle');
-            circle.style.background = color;
-        }
-        function toggleMenu() {
-            var menuToggle = document.querySelector('.toggle');
-            var navigation = document.querySelector('.navigation')
-            menuToggle.classList.toggle('active')
-            navigation.classList.toggle('active')
-        }
-    </script>
 </body>
 </html>
